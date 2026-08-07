@@ -10,4 +10,7 @@ This analysis was conducted primarily on GalaxyTrakr, a graphical user interface
 
 1) EXPLORATORY ANALYSIS
 
-I first filtered the Vet-LIRN dataset for isolates taken from exotic animals, domestic animals, and wildlife. After organizing these isolates by serovar, I discovered a population of serovar Typhimurium isolates spread among different bird and mammalian species (Table 1- "Vet-LIRN"). 
+I first filtered the Vet-LIRN dataset for isolates taken from exotic animals, domestic animals, and wildlife. After organizing these isolates by serovar, I discovered a population of serovar Typhimurium isolates spread among different bird and mammalian species (Table 1- Vet-LIRN, "Enterica serovars"). After  retrieving sample accession numbers profiling for AMR genes using metadata from NCBI Pathogen Detection, I discovered a cassette of multidrug-resistant genes (blaCMY-2, sul2, tet(A)) among two domestic cats and a wild turkey (Table 1- Vet-LIRN, "Typhimurium metadata"). 
+
+The blaCMY-2 gene is an antibiotic resistance gene that encodes an AmpC-type beta-lactamase enzyme. It provides bacteria with resistance to penicillins, cephamycins, and third-generation cephalosporins such as ceftriaxone and ceftazidime (Call et al., 2009). It has been associated in the literature with Salmonella Typhimurium and E. coli in commerical poultry farming operations, typically carried by an IncI plasmid designated in MOB as plasmid cluster AA474 (Robertson et al., 2023; Sanderson et al., 2023; Habib et al., 2025). Indeed, IncI and IncX plasmid backbones were detected in the Vet-LIRN isolates, suggesting that a mobile genetic element may have been carrying this gene and others.
+
