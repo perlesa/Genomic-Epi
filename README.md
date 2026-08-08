@@ -31,3 +31,5 @@ The 32 assemblies were run through MOB-recon, generating plasmid bins and associ
 5) STRUCTURAL ANALYSIS- Resistance element synteny conserved across diverse source types
 
 Two plasmids may be genetically related without being structurally identical-- i.e. they may share a set of core genes but the order of those genes in physical space may be different across plasmids. Detecting plasmid transmission events requires observing this structural similarity, or "synteny", across isolates. Because available plasmid assemblies were too fragmented to fully reconstruct the whole plasmid, contigs containing the resistance genes of interest were extracted and compared using Clinker (Dataset 6- 474_859 Contigs, Figure 4- AA474 Clinker, Figure 5- AA859 Clinker). Contigs from both AA474 and AA859 were conserved across poultry, domestic animal, animal diet, and human isolates. This conservation indicates that the resistance-associated regions are maintained across multiple ecological compartments and provides modest supporting evidence for the movement of these genetic elements among hosts. 
+
+6) GENOTYPE ANALYSIS- Mobile genetic element machinery present in related plasmids
