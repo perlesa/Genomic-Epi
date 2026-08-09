@@ -1,0 +1,477 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "comments": [],
+    "format-version": "0.1",
+    "name": "Clinker on resistance contigs",
+    "report": {
+        "markdown": "\n# Workflow Execution Report\n\n## Workflow Inputs\n```galaxy\ninvocation_inputs()\n```\n\n## Workflow Outputs\n```galaxy\ninvocation_outputs()\n```\n\n## Workflow\n```galaxy\nworkflow_display()\n```\n"
+    },
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "AA474 contig accessions from blaCMY-2+ isolates"
+                }
+            ],
+            "label": "AA474 contig accessions from blaCMY-2+ isolates",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 0.0,
+                "top": 77.27032614858477
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "2cf91af5-f852-4d75-8ee3-fa36321a5df6",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "AA859 contig accessions from sul2/tetA+ isolates "
+                }
+            ],
+            "label": "AA859 contig accessions from sul2/tetA+ isolates ",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 7.447750897994282,
+                "top": 288.4513450342075
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "bdb60367-41b9-4cca-8f8e-10708246decb",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/ncbi_acc_download/ncbi_acc_download/0.2.8+galaxy0",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "query_source|accession_file": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool NCBI Accession Download",
+                    "name": "query_source"
+                }
+            ],
+            "label": null,
+            "name": "NCBI Accession Download",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                },
+                {
+                    "name": "error_log",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 229.60211276054784,
+                "top": 73.43514228289236
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/ncbi_acc_download/ncbi_acc_download/0.2.8+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "e063168e0a81",
+                "name": "ncbi_acc_download",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"ignore_failed\": \"0\", \"molecule\": {\"select\": \"nucleotide\", \"__current_case__\": 0, \"format\": \"fasta\"}, \"query_source\": {\"select\": \"accession_file\", \"__current_case__\": 0, \"accession_file\": {\"__class__\": \"ConnectedValue\"}}, \"range\": null, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.2.8+galaxy0",
+            "type": "tool",
+            "uuid": "81116d80-f93d-4ade-bb9d-6b0e950a4241",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "AA474 contig genomes",
+                    "output_name": "output",
+                    "uuid": "75b948d2-b763-488a-a931-42c239389835"
+                }
+            ]
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/ncbi_acc_download/ncbi_acc_download/0.2.8+galaxy0",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "query_source|accession_file": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool NCBI Accession Download",
+                    "name": "query_source"
+                }
+            ],
+            "label": null,
+            "name": "NCBI Accession Download",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                },
+                {
+                    "name": "error_log",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 237.00296334200473,
+                "top": 283.8988147339293
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/ncbi_acc_download/ncbi_acc_download/0.2.8+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "e063168e0a81",
+                "name": "ncbi_acc_download",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"ignore_failed\": \"0\", \"molecule\": {\"select\": \"nucleotide\", \"__current_case__\": 0, \"format\": \"fasta\"}, \"query_source\": {\"select\": \"accession_file\", \"__current_case__\": 0, \"accession_file\": {\"__class__\": \"ConnectedValue\"}}, \"range\": null, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.2.8+galaxy0",
+            "type": "tool",
+            "uuid": "434039ae-9696-4b5a-8104-f48c0a46daff",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "AA859 contig genomes",
+                    "output_name": "output",
+                    "uuid": "e3490619-29f9-433d-a665-a469cf443295"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "__FLATTEN__",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "input": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Flatten collection",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 485.61164684695837,
+                "top": 75.29879100238416
+            },
+            "post_job_actions": {},
+            "tool_id": "__FLATTEN__",
+            "tool_state": "{\"input\": {\"__class__\": \"ConnectedValue\"}, \"join_identifier\": \"_\", \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "5b557ec7-ae28-4f25-8d15-6673fcbc2d10",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "AA474 flattened",
+                    "output_name": "output",
+                    "uuid": "8430bcde-2287-4031-adf9-6796d367d8eb"
+                }
+            ]
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "__FLATTEN__",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "input": {
+                    "id": 3,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Flatten collection",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 480.4905420771422,
+                "top": 282.9623384392306
+            },
+            "post_job_actions": {},
+            "tool_id": "__FLATTEN__",
+            "tool_state": "{\"input\": {\"__class__\": \"ConnectedValue\"}, \"join_identifier\": \"_\", \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "e2501c2b-cf13-4d00-b6f1-2a3b9c60db39",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "AA859 flattened",
+                    "output_name": "output",
+                    "uuid": "0ee6f8c0-0a58-421b-93a3-7db262cce580"
+                }
+            ]
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/crs4/prokka/prokka/1.14.6+galaxy2",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "input": {
+                    "id": 4,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Prokka",
+                    "name": "input"
+                },
+                {
+                    "description": "runtime parameter for tool Prokka",
+                    "name": "proteins"
+                }
+            ],
+            "label": null,
+            "name": "Prokka",
+            "outputs": [
+                {
+                    "name": "out_gbk",
+                    "type": "genbank"
+                },
+                {
+                    "name": "out_log",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 724.3134073687136,
+                "top": 0.0
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/crs4/prokka/prokka/1.14.6+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "c105b66eaab1",
+                "name": "prokka",
+                "owner": "crs4",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"centre\": \"\", \"compliant\": {\"compliant_select\": \"no\", \"__current_case__\": 0, \"addgenes\": false, \"mincontig\": \"200\"}, \"evalue\": \"1e-06\", \"fast\": false, \"genus\": \"\", \"gffver\": \"3\", \"increment\": \"1\", \"input\": {\"__class__\": \"RuntimeValue\"}, \"kingdom\": {\"kingdom_select\": \"Bacteria\", \"__current_case__\": 1, \"gcode\": \"11\"}, \"locustag\": \"\", \"metagenome\": false, \"norrna\": false, \"notrna\": false, \"outputs\": [\"gbk\"], \"plasmid\": \"\", \"proteins\": {\"__class__\": \"RuntimeValue\"}, \"rfam\": false, \"species\": \"\", \"strain\": \"\", \"usegenus\": false, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.14.6+galaxy2",
+            "type": "tool",
+            "uuid": "e19e7ff8-6ed7-4db3-8615-60f616f7e653",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "AA474 out_gbk",
+                    "output_name": "out_gbk",
+                    "uuid": "7e82d6fd-e605-48a1-a2af-89cfce74db89"
+                }
+            ]
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/crs4/prokka/prokka/1.14.6+galaxy2",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "input": {
+                    "id": 5,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Prokka",
+                    "name": "input"
+                },
+                {
+                    "description": "runtime parameter for tool Prokka",
+                    "name": "proteins"
+                }
+            ],
+            "label": null,
+            "name": "Prokka",
+            "outputs": [
+                {
+                    "name": "out_gbk",
+                    "type": "genbank"
+                },
+                {
+                    "name": "out_log",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 725.7087050616803,
+                "top": 256.3847812896399
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/crs4/prokka/prokka/1.14.6+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "c105b66eaab1",
+                "name": "prokka",
+                "owner": "crs4",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"centre\": \"\", \"compliant\": {\"compliant_select\": \"no\", \"__current_case__\": 0, \"addgenes\": false, \"mincontig\": \"200\"}, \"evalue\": \"1e-06\", \"fast\": false, \"genus\": \"\", \"gffver\": \"3\", \"increment\": \"1\", \"input\": {\"__class__\": \"RuntimeValue\"}, \"kingdom\": {\"kingdom_select\": \"Bacteria\", \"__current_case__\": 1, \"gcode\": \"11\"}, \"locustag\": \"\", \"metagenome\": false, \"norrna\": false, \"notrna\": false, \"outputs\": [\"gbk\"], \"plasmid\": \"\", \"proteins\": {\"__class__\": \"RuntimeValue\"}, \"rfam\": false, \"species\": \"\", \"strain\": \"\", \"usegenus\": false, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.14.6+galaxy2",
+            "type": "tool",
+            "uuid": "c0c88feb-3caf-4dee-ad1e-003d09d809d1",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "AA859 out_gbk",
+                    "output_name": "out_gbk",
+                    "uuid": "3dc42cce-997d-409d-b710-5e28c713b548"
+                }
+            ]
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/thanhlv/clinker/clinker/0.0.23+galaxy0",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "gbk": {
+                    "id": 6,
+                    "output_name": "out_gbk"
+                }
+            },
+            "inputs": [],
+            "label": "AA474 Clinker",
+            "name": "clinker",
+            "outputs": [
+                {
+                    "name": "plot",
+                    "type": "html"
+                }
+            ],
+            "position": {
+                "left": 948.9173023873258,
+                "top": 59.09602792778482
+            },
+            "post_job_actions": {
+                "RenameDatasetActionplot": {
+                    "action_arguments": {
+                        "newname": "AA474 Clinker"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "plot"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/thanhlv/clinker/clinker/0.0.23+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "b2eb9231d95d",
+                "name": "clinker",
+                "owner": "thanhlv",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"gbk\": {\"__class__\": \"ConnectedValue\"}, \"identity\": \"0.3\", \"no_align\": false, \"output\": false, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.23+galaxy0",
+            "type": "tool",
+            "uuid": "51824e9c-473d-43c8-92f2-ccc6a21b09f4",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "AA474 plot",
+                    "output_name": "plot",
+                    "uuid": "d0135b22-fe6d-4fec-be48-0497ea13af6f"
+                }
+            ]
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/thanhlv/clinker/clinker/0.0.23+galaxy0",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "gbk": {
+                    "id": 7,
+                    "output_name": "out_gbk"
+                }
+            },
+            "inputs": [],
+            "label": "AA859 Clinker",
+            "name": "clinker",
+            "outputs": [
+                {
+                    "name": "plot",
+                    "type": "html"
+                }
+            ],
+            "position": {
+                "left": 945.4099458731312,
+                "top": 330.2292785504812
+            },
+            "post_job_actions": {
+                "RenameDatasetActionplot": {
+                    "action_arguments": {
+                        "newname": "AA859 Clinker"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "plot"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/thanhlv/clinker/clinker/0.0.23+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "b2eb9231d95d",
+                "name": "clinker",
+                "owner": "thanhlv",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"gbk\": {\"__class__\": \"ConnectedValue\"}, \"identity\": \"0.3\", \"no_align\": false, \"output\": false, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.23+galaxy0",
+            "type": "tool",
+            "uuid": "0253dbc0-a3f1-4cac-8aa9-afdabea69c80",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "AA859 plot",
+                    "output_name": "plot",
+                    "uuid": "2764cc23-2f46-4f0a-9c76-79b020d37ccb"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "217abf7d-5e72-4145-a748-7924c0bb6631",
+    "version": 4
+}

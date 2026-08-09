@@ -1,0 +1,1060 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "comments": [],
+    "format-version": "0.1",
+    "name": "Plasmid analysis",
+    "report": {
+        "markdown": "\n# Workflow Execution Report\n\n## Workflow Inputs\n```galaxy\ninvocation_inputs()\n```\n\n## Workflow Outputs\n```galaxy\ninvocation_outputs()\n```\n\n## Workflow\n```galaxy\nworkflow_display()\n```\n"
+    },
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "staramr-filtered blaCMY-2+ genome assembly accessions (.txt)"
+                }
+            ],
+            "label": "staramr-filtered blaCMY-2+ genome assembly accessions (.txt)",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 0,
+                "top": 802.8437757658423
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "b6b42e2c-82e0-4b7e-a8b5-462d1c95cffa",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/ncbi_datasets/datasets_download_genome/18.32.0+galaxy0",
+            "errors": null,
+            "id": 1,
+            "input_connections": {
+                "query|subcommand|text_or_file|inputfile": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "NCBI Datasets Genomes",
+            "outputs": [
+                {
+                    "name": "genome_fasta",
+                    "type": "input"
+                },
+                {
+                    "name": "genome_data_report",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 222.50560615289154,
+                "top": 801.6582749740917
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/ncbi_datasets/datasets_download_genome/18.32.0+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "fd848bb708de",
+                "name": "ncbi_datasets",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"file_choices\": {\"report_columns\": [\"accession\", \"assminfo-name\", \"assminfo-submitter\", \"organism-name\"], \"include\": \"genome\", \"decompress\": false}, \"filters\": {\"reference\": false, \"annotated\": false, \"assembly_level\": null, \"assembly_version\": \"latest\", \"assembly_source\": null, \"chromosomes\": null, \"exclude_atypical\": false, \"mag\": null, \"released_before\": null, \"released_after\": null, \"search\": []}, \"query\": {\"subcommand\": {\"download_by\": \"accession\", \"__current_case__\": 0, \"text_or_file\": {\"text_or_file\": \"file\", \"__current_case__\": 1, \"inputfile\": {\"__class__\": \"ConnectedValue\"}}}}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "18.32.0+galaxy0",
+            "type": "tool",
+            "uuid": "9d83365f-f59a-46c6-9b56-f78fb284eb96",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "genome_fasta",
+                    "output_name": "genome_fasta",
+                    "uuid": "72c7e13e-ae0d-426f-9cfb-ea90e996ea89"
+                }
+            ]
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "__FLATTEN__",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "input": {
+                    "id": 1,
+                    "output_name": "genome_fasta"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Flatten collection",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 459.02229285454206,
+                "top": 801.459657636743
+            },
+            "post_job_actions": {},
+            "tool_id": "__FLATTEN__",
+            "tool_state": "{\"input\": {\"__class__\": \"ConnectedValue\"}, \"join_identifier\": \"_\", \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "7019f872-440f-4d62-8d27-82ec5d9cd788",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "output",
+                    "output_name": "output",
+                    "uuid": "b4f49e0c-d4ca-49eb-ba7f-fc6ae491ddf2"
+                }
+            ]
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/nml/mob_suite/mob_recon/3.1.9+galaxy0",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "input": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool MOB-Recon",
+                    "name": "adv_param"
+                },
+                {
+                    "description": "runtime parameter for tool MOB-Recon",
+                    "name": "adv_param"
+                },
+                {
+                    "description": "runtime parameter for tool MOB-Recon",
+                    "name": "adv_param"
+                },
+                {
+                    "description": "runtime parameter for tool MOB-Recon",
+                    "name": "adv_param"
+                },
+                {
+                    "description": "runtime parameter for tool MOB-Recon",
+                    "name": "adv_param"
+                },
+                {
+                    "description": "runtime parameter for tool MOB-Recon",
+                    "name": "adv_param"
+                },
+                {
+                    "description": "runtime parameter for tool MOB-Recon",
+                    "name": "adv_param"
+                },
+                {
+                    "description": "runtime parameter for tool MOB-Recon",
+                    "name": "adv_param"
+                },
+                {
+                    "description": "runtime parameter for tool MOB-Recon",
+                    "name": "adv_param"
+                }
+            ],
+            "label": null,
+            "name": "MOB-Recon",
+            "outputs": [
+                {
+                    "name": "plasmids",
+                    "type": "input"
+                },
+                {
+                    "name": "contig_report",
+                    "type": "tabular"
+                },
+                {
+                    "name": "mobtyper_aggregate_report",
+                    "type": "tabular"
+                },
+                {
+                    "name": "chromosome",
+                    "type": "fasta"
+                }
+            ],
+            "position": {
+                "left": 720.1809170120576,
+                "top": 309.6864510880465
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/nml/mob_suite/mob_recon/3.1.9+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "179497074102",
+                "name": "mob_suite",
+                "owner": "nml",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv_param\": {\"unicycler_contigs\": true, \"run_overhang\": true, \"debug\": false, \"mash_genome_neighbor_threshold\": \"0.002\", \"primary_cluster_dist\": \"0.06\", \"secondary_cluster_dist\": \"0.025\", \"max_contig_size\": \"450000\", \"max_plasmid_size\": \"450000\", \"min_rep_evalue\": \"1e-05\", \"min_mob_evalue\": \"1e-05\", \"min_con_evalue\": \"1e-05\", \"min_rpp_evalue\": \"1e-05\", \"min_length\": \"1000\", \"min_rep_ident\": \"80\", \"min_mob_ident\": \"80\", \"min_con_ident\": \"80\", \"min_rpp_ident\": \"80\", \"min_rep_cov\": \"80\", \"min_mob_cov\": \"80\", \"min_con_cov\": \"60\", \"min_rpp_cov\": \"80\", \"plasmid_db\": {\"__class__\": \"RuntimeValue\"}, \"plasmid_mash_db\": {\"__class__\": \"RuntimeValue\"}, \"plasmid_meta\": {\"__class__\": \"RuntimeValue\"}, \"plasmid_replicons\": {\"__class__\": \"RuntimeValue\"}, \"repetitive_mask\": {\"__class__\": \"RuntimeValue\"}, \"plasmid_mob\": {\"__class__\": \"RuntimeValue\"}, \"plasmid_mpf\": {\"__class__\": \"RuntimeValue\"}, \"plasmid_orit\": {\"__class__\": \"RuntimeValue\"}, \"filter_db\": {\"__class__\": \"RuntimeValue\"}}, \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.1.9+galaxy0",
+            "type": "tool",
+            "uuid": "77406414-cfa8-48f4-bda8-0fde9723ef71",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "plasmids",
+                    "output_name": "plasmids",
+                    "uuid": "d48e9b05-1933-43ea-83d3-770742a39f9c"
+                },
+                {
+                    "label": "mobtyper_aggregate_report",
+                    "output_name": "mobtyper_aggregate_report",
+                    "uuid": "695573bd-1047-4e52-9327-6e0c67a50117"
+                },
+                {
+                    "label": "contig_report",
+                    "output_name": "contig_report",
+                    "uuid": "6eb7ef64-3efe-47d2-a4c4-5277dc0ee260"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "__APPLY_RULES__",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "input": {
+                    "id": 3,
+                    "output_name": "plasmids"
+                }
+            },
+            "inputs": [],
+            "label": "Filter for AA474",
+            "name": "Apply rules",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 970.5405437807228,
+                "top": 313.06824469035007
+            },
+            "post_job_actions": {},
+            "tool_id": "__APPLY_RULES__",
+            "tool_state": "{\"input\": {\"__class__\": \"ConnectedValue\"}, \"rules\": {\"mapping\": [{\"columns\": [0], \"editing\": false, \"type\": \"list_identifiers\"}], \"rules\": [{\"error\": null, \"type\": \"add_column_metadata\", \"value\": \"identifier0\", \"warn\": null}, {\"error\": null, \"expression\": \"AA474\", \"invert\": false, \"target_column\": 0, \"type\": \"add_filter_regex\", \"warn\": null}]}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "52989d1f-81d4-4bb1-8752-3425331b26fa",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "AA474",
+                    "output_name": "output",
+                    "uuid": "365053b1-cb58-45ed-8f56-7c0a41684655"
+                }
+            ]
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "__APPLY_RULES__",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "input": {
+                    "id": 3,
+                    "output_name": "plasmids"
+                }
+            },
+            "inputs": [],
+            "label": "Filter for AA859",
+            "name": "Apply rules",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 976.1433450467671,
+                "top": 454.10926015665456
+            },
+            "post_job_actions": {},
+            "tool_id": "__APPLY_RULES__",
+            "tool_state": "{\"input\": {\"__class__\": \"ConnectedValue\"}, \"rules\": {\"mapping\": [{\"columns\": [0], \"editing\": false, \"type\": \"list_identifiers\"}], \"rules\": [{\"error\": null, \"type\": \"add_column_metadata\", \"value\": \"identifier0\", \"warn\": null}, {\"error\": null, \"expression\": \"AA859\", \"invert\": false, \"target_column\": 0, \"type\": \"add_filter_regex\", \"warn\": null}]}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "5d5da38e-f072-459b-9d9d-4aaab7e31f4d",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "AA859",
+                    "output_name": "output",
+                    "uuid": "858467fa-f967-4fa9-b0cd-9acfce2ca4eb"
+                }
+            ]
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "__APPLY_RULES__",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "input": {
+                    "id": 3,
+                    "output_name": "contig_report"
+                }
+            },
+            "inputs": [],
+            "label": "Filter for AA475",
+            "name": "Apply rules",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 454.2650023737097,
+                "top": 1064.6055817640656
+            },
+            "post_job_actions": {},
+            "tool_id": "__APPLY_RULES__",
+            "tool_state": "{\"input\": {\"__class__\": \"ConnectedValue\"}, \"rules\": {\"mapping\": [{\"columns\": [0], \"editing\": false, \"type\": \"list_identifiers\"}], \"rules\": [{\"error\": null, \"type\": \"add_column_metadata\", \"value\": \"identifier0\", \"warn\": null}, {\"error\": null, \"expression\": \"AA474\", \"invert\": false, \"target_column\": 0, \"type\": \"add_filter_regex\", \"warn\": null}]}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "dc79bb46-3cec-4bd1-96ce-a28d2ceec197",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "AA474 contigs",
+                    "output_name": "output",
+                    "uuid": "837721e7-3724-4625-a977-f13568b3dc80"
+                }
+            ]
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "__APPLY_RULES__",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "input": {
+                    "id": 3,
+                    "output_name": "contig_report"
+                }
+            },
+            "inputs": [],
+            "label": "Filter for AA860",
+            "name": "Apply rules",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 453.9272090160343,
+                "top": 1209.3258209503765
+            },
+            "post_job_actions": {},
+            "tool_id": "__APPLY_RULES__",
+            "tool_state": "{\"input\": {\"__class__\": \"ConnectedValue\"}, \"rules\": {\"mapping\": [{\"columns\": [0], \"editing\": false, \"type\": \"list_identifiers\"}], \"rules\": [{\"error\": null, \"type\": \"add_column_metadata\", \"value\": \"identifier0\", \"warn\": null}, {\"error\": null, \"expression\": \"AA859\", \"invert\": false, \"target_column\": 0, \"type\": \"add_filter_regex\", \"warn\": null}]}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "cbded504-dcda-46ba-a7ce-f7ddbaf2e8ea",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "AA859 contigs",
+                    "output_name": "output",
+                    "uuid": "a1aba89a-d195-465c-8383-f512a7810de7"
+                }
+            ]
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "opentrakr.org/repos/jpayne/mashtree_cpu23mem86/mashtree_cpu23mem86/1.4.6+galaxy0",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "input": {
+                    "id": 4,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "AA474 Mashtree",
+            "name": "Mashtree",
+            "outputs": [
+                {
+                    "name": "mashtree",
+                    "type": "newick"
+                },
+                {
+                    "name": "matrix",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 1256.7707704016943,
+                "top": 0
+            },
+            "post_job_actions": {},
+            "tool_id": "opentrakr.org/repos/jpayne/mashtree_cpu23mem86/mashtree_cpu23mem86/1.4.6+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "565d71d90a91",
+                "name": "mashtree_cpu23mem86",
+                "owner": "jpayne",
+                "tool_shed": "opentrakr.org"
+            },
+            "tool_state": "{\"genomesize\": \"5000000\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"kmerlength\": \"21\", \"mindepth\": \"0\", \"sketchsize\": \"10000\", \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.4.6+galaxy0",
+            "type": "tool",
+            "uuid": "f1362c71-647b-4bbe-b059-dc489d052e2b",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "AA474 mashtree",
+                    "output_name": "mashtree",
+                    "uuid": "cdc60673-9047-49e9-bd3d-4e468d414f12"
+                },
+                {
+                    "label": "AA474 matrix",
+                    "output_name": "matrix",
+                    "uuid": "f9f18a78-6368-48d1-b9c5-06ef71f255cc"
+                }
+            ]
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/nml/mob_suite/mob_typer/3.1.9+galaxy1",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "input": {
+                    "id": 4,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool MOB-Typer",
+                    "name": "adv_param"
+                },
+                {
+                    "description": "runtime parameter for tool MOB-Typer",
+                    "name": "adv_param"
+                },
+                {
+                    "description": "runtime parameter for tool MOB-Typer",
+                    "name": "adv_param"
+                },
+                {
+                    "description": "runtime parameter for tool MOB-Typer",
+                    "name": "adv_param"
+                },
+                {
+                    "description": "runtime parameter for tool MOB-Typer",
+                    "name": "adv_param"
+                },
+                {
+                    "description": "runtime parameter for tool MOB-Typer",
+                    "name": "adv_param"
+                },
+                {
+                    "description": "runtime parameter for tool MOB-Typer",
+                    "name": "adv_param"
+                },
+                {
+                    "description": "runtime parameter for tool MOB-Typer",
+                    "name": "adv_param"
+                }
+            ],
+            "label": null,
+            "name": "MOB-Typer",
+            "outputs": [
+                {
+                    "name": "plasmid_report",
+                    "type": "tabular"
+                },
+                {
+                    "name": "biomarker_report",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 1260.563218523692,
+                "top": 223.60342031022242
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/nml/mob_suite/mob_typer/3.1.9+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "179497074102",
+                "name": "mob_suite",
+                "owner": "nml",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv_param\": {\"multi\": false, \"biomarker_report_file\": true, \"min_rep_evalue_value\": \"1e-05\", \"min_mob_evalue_value\": \"1e-05\", \"min_con_evalue_value\": \"1e-05\", \"min_length\": \"1000\", \"min_rep_ident\": \"80\", \"min_mob_ident\": \"80\", \"min_con_ident\": \"80\", \"min_rep_cov\": \"80\", \"min_mob_cov\": \"80\", \"min_con_cov\": \"70\", \"min_overlap\": \"10\", \"debug\": false, \"plasmid_db\": {\"__class__\": \"RuntimeValue\"}, \"plasmid_mash_db\": {\"__class__\": \"RuntimeValue\"}, \"plasmid_meta\": {\"__class__\": \"RuntimeValue\"}, \"plasmid_replicons\": {\"__class__\": \"RuntimeValue\"}, \"repetitive_mask\": {\"__class__\": \"RuntimeValue\"}, \"plasmid_mob\": {\"__class__\": \"RuntimeValue\"}, \"plasmid_mpf\": {\"__class__\": \"RuntimeValue\"}, \"plasmid_orit\": {\"__class__\": \"RuntimeValue\"}}, \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.1.9+galaxy1",
+            "type": "tool",
+            "uuid": "064dae86-5a88-411d-b047-e766fd8f4e47",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "AA474 plasmid_report",
+                    "output_name": "plasmid_report",
+                    "uuid": "49fb2889-4780-4f70-bd00-80343942f17b"
+                },
+                {
+                    "label": "AA474 biomarker_report",
+                    "output_name": "biomarker_report",
+                    "uuid": "4aefe758-28c9-4efe-9899-7252c093a69e"
+                }
+            ]
+        },
+        "10": {
+            "annotation": "",
+            "content_id": "opentrakr.org/repos/jpayne/mashtree_cpu23mem86/mashtree_cpu23mem86/1.4.6+galaxy0",
+            "errors": null,
+            "id": 10,
+            "input_connections": {
+                "input": {
+                    "id": 5,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "AA859 Mashtree",
+            "name": "Mashtree",
+            "outputs": [
+                {
+                    "name": "mashtree",
+                    "type": "newick"
+                },
+                {
+                    "name": "matrix",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 1261.8577461307711,
+                "top": 799.4890325493026
+            },
+            "post_job_actions": {},
+            "tool_id": "opentrakr.org/repos/jpayne/mashtree_cpu23mem86/mashtree_cpu23mem86/1.4.6+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "565d71d90a91",
+                "name": "mashtree_cpu23mem86",
+                "owner": "jpayne",
+                "tool_shed": "opentrakr.org"
+            },
+            "tool_state": "{\"genomesize\": \"5000000\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"kmerlength\": \"21\", \"mindepth\": \"0\", \"sketchsize\": \"10000\", \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.4.6+galaxy0",
+            "type": "tool",
+            "uuid": "5eca64f7-27bc-4022-b77f-dc885552bc49",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "AA859 mashtree",
+                    "output_name": "mashtree",
+                    "uuid": "d9c055bf-d8b0-4480-98d1-06edc5958bb7"
+                },
+                {
+                    "label": "AA859 matrix",
+                    "output_name": "matrix",
+                    "uuid": "4473b55c-58f7-402d-a630-9cb1ab55bd5b"
+                }
+            ]
+        },
+        "11": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/nml/mob_suite/mob_typer/3.1.9+galaxy1",
+            "errors": null,
+            "id": 11,
+            "input_connections": {
+                "input": {
+                    "id": 5,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool MOB-Typer",
+                    "name": "adv_param"
+                },
+                {
+                    "description": "runtime parameter for tool MOB-Typer",
+                    "name": "adv_param"
+                },
+                {
+                    "description": "runtime parameter for tool MOB-Typer",
+                    "name": "adv_param"
+                },
+                {
+                    "description": "runtime parameter for tool MOB-Typer",
+                    "name": "adv_param"
+                },
+                {
+                    "description": "runtime parameter for tool MOB-Typer",
+                    "name": "adv_param"
+                },
+                {
+                    "description": "runtime parameter for tool MOB-Typer",
+                    "name": "adv_param"
+                },
+                {
+                    "description": "runtime parameter for tool MOB-Typer",
+                    "name": "adv_param"
+                },
+                {
+                    "description": "runtime parameter for tool MOB-Typer",
+                    "name": "adv_param"
+                }
+            ],
+            "label": null,
+            "name": "MOB-Typer",
+            "outputs": [
+                {
+                    "name": "plasmid_report",
+                    "type": "tabular"
+                },
+                {
+                    "name": "biomarker_report",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 1271.86177040142,
+                "top": 1022.8068974573371
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/nml/mob_suite/mob_typer/3.1.9+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "179497074102",
+                "name": "mob_suite",
+                "owner": "nml",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv_param\": {\"multi\": false, \"biomarker_report_file\": true, \"min_rep_evalue_value\": \"1e-05\", \"min_mob_evalue_value\": \"1e-05\", \"min_con_evalue_value\": \"1e-05\", \"min_length\": \"1000\", \"min_rep_ident\": \"80\", \"min_mob_ident\": \"80\", \"min_con_ident\": \"80\", \"min_rep_cov\": \"80\", \"min_mob_cov\": \"80\", \"min_con_cov\": \"70\", \"min_overlap\": \"10\", \"debug\": false, \"plasmid_db\": {\"__class__\": \"RuntimeValue\"}, \"plasmid_mash_db\": {\"__class__\": \"RuntimeValue\"}, \"plasmid_meta\": {\"__class__\": \"RuntimeValue\"}, \"plasmid_replicons\": {\"__class__\": \"RuntimeValue\"}, \"repetitive_mask\": {\"__class__\": \"RuntimeValue\"}, \"plasmid_mob\": {\"__class__\": \"RuntimeValue\"}, \"plasmid_mpf\": {\"__class__\": \"RuntimeValue\"}, \"plasmid_orit\": {\"__class__\": \"RuntimeValue\"}}, \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.1.9+galaxy1",
+            "type": "tool",
+            "uuid": "ad6c9ff6-b28c-48c8-9e32-a4a6166be16b",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "AA859 plasmid_report",
+                    "output_name": "plasmid_report",
+                    "uuid": "765783d1-6a74-41af-9db9-5f292dae3527"
+                },
+                {
+                    "label": "AA859 biomarker_report",
+                    "output_name": "biomarker_report",
+                    "uuid": "63c692f8-7553-4ba4-99cf-3c25b00a7f74"
+                }
+            ]
+        },
+        "12": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/nml/collapse_collections/collapse_dataset/5.1.0",
+            "errors": null,
+            "id": 12,
+            "input_connections": {
+                "input_list": {
+                    "id": 6,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Collapse Collection",
+                    "name": "input_list"
+                }
+            ],
+            "label": null,
+            "name": "Collapse Collection",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 722.1924932910425,
+                "top": 1061.9478805301326
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/nml/collapse_collections/collapse_dataset/5.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "90981f86000f",
+                "name": "collapse_collections",
+                "owner": "nml",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"filename\": {\"add_name\": false, \"__current_case__\": 1}, \"input_list\": {\"__class__\": \"RuntimeValue\"}, \"one_header\": false, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "5.1.0",
+            "type": "tool",
+            "uuid": "bd5f2441-ce75-4bfe-868b-286fdbcdfb4c",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "AA474 contigs report",
+                    "output_name": "output",
+                    "uuid": "39b325be-8c62-4eef-a106-db7a1c9188f9"
+                }
+            ]
+        },
+        "13": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/nml/collapse_collections/collapse_dataset/5.1.0",
+            "errors": null,
+            "id": 13,
+            "input_connections": {
+                "input_list": {
+                    "id": 7,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Collapse Collection",
+                    "name": "input_list"
+                }
+            ],
+            "label": null,
+            "name": "Collapse Collection",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 725.2573021110627,
+                "top": 1212.7137430403952
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/nml/collapse_collections/collapse_dataset/5.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "90981f86000f",
+                "name": "collapse_collections",
+                "owner": "nml",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"filename\": {\"add_name\": false, \"__current_case__\": 1}, \"input_list\": {\"__class__\": \"RuntimeValue\"}, \"one_header\": false, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "5.1.0",
+            "type": "tool",
+            "uuid": "cd600d09-d6e8-4263-afc6-20c6fd9fd071",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "AA859 contigs report",
+                    "output_name": "output",
+                    "uuid": "a04fd910-22a7-49a0-bae2-5e12309e17f4"
+                }
+            ]
+        },
+        "14": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/nml/collapse_collections/collapse_dataset/5.1.0",
+            "errors": null,
+            "id": 14,
+            "input_connections": {
+                "input_list": {
+                    "id": 9,
+                    "output_name": "biomarker_report"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Collapse Collection",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 1517.2601244149762,
+                "top": 227.01991630735176
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/nml/collapse_collections/collapse_dataset/5.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "90981f86000f",
+                "name": "collapse_collections",
+                "owner": "nml",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"filename\": {\"add_name\": false, \"__current_case__\": 1}, \"input_list\": {\"__class__\": \"ConnectedValue\"}, \"one_header\": false, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "5.1.0",
+            "type": "tool",
+            "uuid": "529b4d1b-64a6-448a-8004-b2e7423fe98c",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "AA474 table",
+                    "output_name": "output",
+                    "uuid": "85220781-8055-48c1-ab2b-355a98b680e1"
+                }
+            ]
+        },
+        "15": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/nml/collapse_collections/collapse_dataset/5.1.0",
+            "errors": null,
+            "id": 15,
+            "input_connections": {
+                "input_list": {
+                    "id": 11,
+                    "output_name": "plasmid_report"
+                }
+            },
+            "inputs": [],
+            "label": "Collapse collection",
+            "name": "Collapse Collection",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 1527.514452871968,
+                "top": 1021.683692258488
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/nml/collapse_collections/collapse_dataset/5.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "90981f86000f",
+                "name": "collapse_collections",
+                "owner": "nml",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"filename\": {\"add_name\": false, \"__current_case__\": 1}, \"input_list\": {\"__class__\": \"ConnectedValue\"}, \"one_header\": false, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "5.1.0",
+            "type": "tool",
+            "uuid": "6a9e442f-fd46-4bbf-9412-62cfc6dbda74",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "AA859 table",
+                    "output_name": "output",
+                    "uuid": "1cc99432-6d72-419b-b159-23f89070a063"
+                }
+            ]
+        },
+        "16": {
+            "annotation": "",
+            "content_id": "tabular_to_csv",
+            "errors": null,
+            "id": 16,
+            "input_connections": {
+                "tabular": {
+                    "id": 12,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Convert tabular to CSV",
+                    "name": "tabular"
+                }
+            ],
+            "label": null,
+            "name": "Convert tabular to CSV",
+            "outputs": [
+                {
+                    "name": "csv",
+                    "type": "csv"
+                }
+            ],
+            "position": {
+                "left": 987.6839977006945,
+                "top": 1060.7035539231401
+            },
+            "post_job_actions": {
+                "RenameDatasetActioncsv": {
+                    "action_arguments": {
+                        "newname": "AA474 contigs report"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "csv"
+                }
+            },
+            "tool_id": "tabular_to_csv",
+            "tool_state": "{\"tabular\": {\"__class__\": \"RuntimeValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "edfde512-6a49-4723-855c-aa2b479c0043",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "AA474 final",
+                    "output_name": "csv",
+                    "uuid": "72a2b86b-da17-4022-bdd3-5208ece5ecee"
+                }
+            ]
+        },
+        "17": {
+            "annotation": "",
+            "content_id": "tabular_to_csv",
+            "errors": null,
+            "id": 17,
+            "input_connections": {
+                "tabular": {
+                    "id": 13,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Convert tabular to CSV",
+                    "name": "tabular"
+                }
+            ],
+            "label": "AA859 final",
+            "name": "Convert tabular to CSV",
+            "outputs": [
+                {
+                    "name": "csv",
+                    "type": "csv"
+                }
+            ],
+            "position": {
+                "left": 984.4540757295882,
+                "top": 1217.4404285900903
+            },
+            "post_job_actions": {
+                "RenameDatasetActioncsv": {
+                    "action_arguments": {
+                        "newname": "AA859 contigs report"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "csv"
+                }
+            },
+            "tool_id": "tabular_to_csv",
+            "tool_state": "{\"tabular\": {\"__class__\": \"RuntimeValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "1d644df6-a403-4423-9b0c-c138ac2d1a59",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "csv",
+                    "output_name": "csv",
+                    "uuid": "459fa1ed-6e16-4bb7-9cad-2041cd871080"
+                }
+            ]
+        },
+        "18": {
+            "annotation": "",
+            "content_id": "tabular_to_csv",
+            "errors": null,
+            "id": 18,
+            "input_connections": {
+                "tabular": {
+                    "id": 14,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Convert tabular to CSV",
+            "outputs": [
+                {
+                    "name": "csv",
+                    "type": "csv"
+                }
+            ],
+            "position": {
+                "left": 1742.5735777719212,
+                "top": 228.06012542133385
+            },
+            "post_job_actions": {
+                "RenameDatasetActioncsv": {
+                    "action_arguments": {
+                        "newname": "AA474 biomarkers"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "csv"
+                }
+            },
+            "tool_id": "tabular_to_csv",
+            "tool_state": "{\"tabular\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "b2c303a1-bc3f-4078-9f63-ff70a1daa25b",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "AA474 csv",
+                    "output_name": "csv",
+                    "uuid": "fb5b97e4-f57f-4556-a67c-612944153c07"
+                }
+            ]
+        },
+        "19": {
+            "annotation": "",
+            "content_id": "tabular_to_csv",
+            "errors": null,
+            "id": 19,
+            "input_connections": {
+                "tabular": {
+                    "id": 15,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "Convert tabular to CSV",
+            "name": "Convert tabular to CSV",
+            "outputs": [
+                {
+                    "name": "csv",
+                    "type": "csv"
+                }
+            ],
+            "position": {
+                "left": 1754.4909749521946,
+                "top": 1021.3391518627233
+            },
+            "post_job_actions": {
+                "RenameDatasetActioncsv": {
+                    "action_arguments": {
+                        "newname": "AA859 biomarkers"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "csv"
+                }
+            },
+            "tool_id": "tabular_to_csv",
+            "tool_state": "{\"tabular\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "a682c511-830c-4e3f-93aa-9fa63c02ba74",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "AA859 csv",
+                    "output_name": "csv",
+                    "uuid": "b15ae057-3361-4a7f-acb6-fb8d726359cf"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "200aef59-15ef-44d3-88ba-0f061b1637a6",
+    "version": 6
+}
