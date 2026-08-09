@@ -34,7 +34,7 @@ Two plasmids may be genetically related without being structurally identical-- i
 
 6) BIOMARKER ANALYSIS- Mobile genetic element machinery present in related plasmids
 
-MOB-suite identified predicted mobility-associated machinery among the resistance-associated plasmids, including relaxases, oriT-associated sequences, and mate-pair formation genes (Dataset 8- 474_859 Biomarkers). The presence of these genetic features indicates potential for bacterial conjugation or mobile transfer, but does not establish that transfer occurred, that the machinery was functional, or that transfer occurred between the isolates examined.
+MOB-Typer identified predicted mobility-associated machinery among the resistance-associated plasmids, including relaxases, oriT-associated sequences, and mate-pair formation genes (Dataset 8- 474_859 Biomarkers). The presence of these genetic features indicates potential for bacterial conjugation or mobile transfer, but does not establish that transfer occurred, that the machinery was functional, or that transfer occurred between the isolates examined.
 
 CONCLUSION
 
