@@ -45,7 +45,7 @@ Taken together, the data point to the circulation of a contextually rare, multid
 
 This project is a pilot study using publicly-available data. As such, limitations on data quality must be taken into account and improved to ensure that future research on this subject can be robust, accurate and predictive. While isolates for all final analyses were quality-controlled, the abundance of short-read sequences and highly fragmented assemblies limited our ability to conduct whole-plasmid analysis, which is needed to more confidently establish conservation of plasmid architecture across transmission events. Time should be dedicated to filtering more strictly for high-quality assemblies, and to improved long-read sequencing capacity if possible. In addition, more human isolates should be included in future analyses to assess the risk of transmission to poultry workers and pet owners. Understanding these questions through a One Health lens represents a fruitful strategy for establishing potential transmission chains and communicating preventative action to populations at greatest risk.
 
-Thanks to Dr. Brianna Stenger, PhD (NDSU-VDL) for granting providing institutional support to conduct this research; and to Daniel Evans, MS (Michigan Department of Health) for providing methodological guidance and technical assistance.
+Thanks to Dr. Brianna Stenger, PhD (NDSU-VDL) for providing institutional support to conduct this research; and to Daniel Evans, MS (Michigan Department of Health) for providing methodological guidance and technical assistance.
 
 NOTES ON WORKFLOWS
 
