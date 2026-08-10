@@ -2,7 +2,7 @@ The following is the documentation of a One Health genomic epidemiology investig
 
 INTRODUCTION
 
-In 2022, these departments were tasked with investigating a Salmonella outbreak among exotic cats in a North Dakota zoo— two snow leopards and a Pallas’ cat. They found that all three were carrying a multidrug-resistant strain of Salmonella serovar Newport, REPJJP01, that had also infected animals in two unrelated zoos. This strain is associated with imported beef products from Mexico, though no additional evidence has yet come forth about potential food-source contamination for these animals.
+In 2022, the above departments were tasked with investigating a Salmonella outbreak among exotic cats in a North Dakota zoo— two snow leopards and a Pallas’ cat. They found that all three were carrying a multidrug-resistant strain of Salmonella serovar Newport, REPJJP01, that had also infected animals in two unrelated zoos. This strain is associated with imported beef products from Mexico, though no additional evidence has yet come forth about potential food-source contamination for these animals.
 
 This event alerted the departments to the need for additional AMR surveillance among exotic and domestic animals as a potential risk factor of zoonotic spillover to humans. These kinds of animals receive considerably less attention than commercial food animals such as poultry, swine, and cattle, which are well-established reservoirs of antimicrobial-resistant bacteria and are subject to extensive antimicrobial use in agricultural settings.
 
